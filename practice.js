@@ -137,7 +137,7 @@
 
 // console.log(removeDupSet(arr));
 
-function generateSimleData(size) {
+function generateSimData(size) {
     const itemPool = [
         "Apple",
         "Mango",
@@ -158,8 +158,8 @@ function generateSimleData(size) {
     return generatedData;
 }
 
-const hugeDataSet = generateSimleData(500000);
-console.log("Data size", hugeDataSet.length6);
+const hugeDataSet = generateSimData(800000);
+console.log("Data size", hugeDataSet.length);
 
 // Brute Force
 const arrStartTime = performance.now();
@@ -171,8 +171,11 @@ const removeDupArr = (arr) => {
         }
     });
     return newArr
-}
+};
+console.log(removeDupArr(hugeDataSet));
+
 const arrEndTime = performance.now();
+
 console.log(`Array Implementation took ${arrEndTime - arrStartTime}`);
 
 // Set implementation
@@ -182,5 +185,7 @@ const removeDupSet = (arr) => {
     return Array.from(set);
 };
 console.log(removeDupSet(hugeDataSet));
+
 const setEndTime = performance.now();
+
 console.log(`Set Implementaion took ${setEndTime - setStartTime}`);
