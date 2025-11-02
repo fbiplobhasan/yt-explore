@@ -422,20 +422,46 @@ const rawApiData = [
 // console.log(subtotal);
 
 // 02
-const players = [
-    { name: "Jamal Bhuyan", score: 88 },
-    { name: "Sheikh Morsalin", score: 81 },
-    { name: "Rakib Hossain", score: 95 },
-    { name: "Topu Barman", score: 91 },
-    { name: "Shohel Rana", score: 72 }
+// const players = [
+//     { name: "Jamal Bhuyan", score: 88 },
+//     { name: "Sheikh Morsalin", score: 81 },
+//     { name: "Rakib Hossain", score: 95 },
+//     { name: "Topu Barman", score: 91 },
+//     { name: "Shohel Rana", score: 72 }
+// ]
+
+// const bestScorer = players.reduce((bestPlayer, player) => {
+//     console.log(bestPlayer, player);
+//     if (bestPlayer.score > player.score) {
+//         return bestPlayer;
+//     }
+//     return player;
+// }, players[0])
+
+// console.log(bestScorer);
+
+//* Video 6
+// 01
+const postsArray = [
+    { id: "p-101", title: "Intro to SQL", author: "Alex" },
+    { id: "p-102", title: "Data Structures in JS", author: "Beth" },
+    { id: "p-103", title: "Understanding Reduce", author: "Chris" },
+    { id: "p-104", title: "CSS grid Tricks", author: "John" },
 ]
 
-const bestScorer = players.reduce((bestPlayer, player) => {
-    console.log(bestPlayer, player);
-    if (bestPlayer.score > player.score) {
-        return bestPlayer;
-    }
-    return player;
-}, players[0])
+const lookupTable = postsArray.reduce((table, post) => {
+    table[post.id] = post;
+    return table
+}, {})
 
-console.log(bestScorer);
+
+//! const post = postsArray.find((post) => post.id === "p-104")
+const post = lookupTable["p-104"]
+
+// console.log(lookupTable["p-104"]); 
+
+for (let post in lookupTable) {
+    console.log(lookupTable[post]);
+}
+
+console.log(post);
