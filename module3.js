@@ -69,43 +69,85 @@
 
 // Video (3)
 // Stack Implementation using Array
-class Stack {
+// class Stack {
+//     constructor() {
+//         this.items = [];
+//     }
+//     push(value) {
+//         this.items.push(value);
+//     }
+//     pop() {
+//         if (this.isEmpty()) {
+//             return undefined;
+//         }
+//         return this.items.pop();
+//     }
+//     peek() {
+//         if (this.isEmpty()) {
+//             return undefined;
+//         }
+//         return this.items[this.items.length - 1]
+//     }
+//     isEmpty() {
+//         return this.items.length === 0;
+//     }
+//     print() {
+//         console.log(this.items.slice().reverse().join(" => "));
+//     }
+// }
+
+// const stack = new Stack();
+
+// console.log(stack.peek());
+// console.log(stack.isEmpty());
+
+// stack.push(10);
+// stack.push(20);
+// stack.push(30);
+
+// stack.print();
+// console.log(stack.peek());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+
+// Video (4)
+// Queue Implementation using Array
+// Array implementation
+class Queue {
     constructor() {
         this.items = [];
     }
-    push(value) {
+    enqueue(value) {
         this.items.push(value);
     }
-    pop() {
+    dequeue() {
         if (this.isEmpty()) {
             return undefined;
         }
-        return this.items.pop();
+        return this.items.shift();
     }
     peek() {
         if (this.isEmpty()) {
             return undefined;
         }
-        return this.items[this.items.length - 1]
+        return this.items[0]
     }
     isEmpty() {
         return this.items.length === 0;
     }
     print() {
-        console.log(this.items.slice().reverse().join(" => "));
+        console.log("Start ==> ", this.items.slice().reverse().join(" => "), "==> end");
     }
 }
 
-const stack = new Stack();
+const queue = new Queue();
 
-console.log(stack.peek());
-console.log(stack.isEmpty());
-
-stack.push(10);
-stack.push(20);
-stack.push(30);
-
-stack.print();
-console.log(stack.peek());
-console.log(stack.pop());
-
+queue.enqueue(10)
+queue.enqueue(20)
+queue.enqueue(30)
+queue.print();
+// console.log(queue.peek());
+queue.dequeue();
+queue.print();
