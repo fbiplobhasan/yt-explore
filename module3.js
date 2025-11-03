@@ -115,39 +115,59 @@
 // Video (4)
 // Queue Implementation using Array
 // Array implementation
-class Queue {
-    constructor() {
-        this.items = [];
-    }
-    enqueue(value) {
-        this.items.push(value);
-    }
-    dequeue() {
-        if (this.isEmpty()) {
-            return undefined;
-        }
-        return this.items.shift();
-    }
-    peek() {
-        if (this.isEmpty()) {
-            return undefined;
-        }
-        return this.items[0]
-    }
-    isEmpty() {
-        return this.items.length === 0;
-    }
-    print() {
-        console.log("Start ==> ", this.items.slice().reverse().join(" => "), "==> end");
+// class Queue {
+//     constructor() {
+//         this.items = [];
+//     }
+//     enqueue(value) {
+//         this.items.push(value);
+//     }
+//     dequeue() {
+//         if (this.isEmpty()) {
+//             return undefined;
+//         }
+//         return this.items.shift(); 
+//     }
+//     peek() {
+//         if (this.isEmpty()) {
+//             return undefined;
+//         }
+//         return this.items[0]
+//     }
+//     isEmpty() {
+//         return this.items.length === 0;
+//     }
+//     print() {
+//         console.log("Start ==> ", this.items.slice().reverse().join(" => "), "==> end");
+//     }
+// }
+
+// const queue = new Queue();
+
+// queue.enqueue(10)
+// queue.enqueue(20)
+// queue.enqueue(30)
+// queue.print();
+// console.log(queue.peek());
+// queue.dequeue();
+// queue.print();
+
+// Video (5) just visual class
+// Video (6)
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
     }
 }
 
-const queue = new Queue();
+const head = new Node(10);
+head.next = new Node(20);
+head.next.next = new Node(30);
+console.log(head);
+let temp = head;
 
-queue.enqueue(10)
-queue.enqueue(20)
-queue.enqueue(30)
-queue.print();
-// console.log(queue.peek());
-queue.dequeue();
-queue.print();
+while (temp !== null) {
+    console.log(temp.value, " ");
+    temp = temp.next
+}
